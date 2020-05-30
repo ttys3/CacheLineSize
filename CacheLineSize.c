@@ -1,4 +1,5 @@
 #include "CacheLineSize.h"
+#include <stdio.h>
 
 #if defined(__APPLE__)
 
@@ -52,3 +53,7 @@ size_t CacheLineSize() {
 #else
 #error Unrecognized platform
 #endif
+
+int main() {
+	printf("cache line size: %u bytes\n", CacheLineSize());
+}
